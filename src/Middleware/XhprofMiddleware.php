@@ -8,11 +8,12 @@ use DateTimeImmutable;
 use MarekSkopal\BuggregatorClient\Client\BuggregatorClient;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use function xhprof_disable;
 use function xhprof_enable;
 
-class XhprofMiddleware
+class XhprofMiddleware implements MiddlewareInterface
 {
     /** @param array<string> $ignoredFunctions */
     public function __construct(
