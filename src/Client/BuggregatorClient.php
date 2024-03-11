@@ -27,8 +27,9 @@ class BuggregatorClient
             'date' => $this->date->getTimestamp(),
         ];
 
-        $request = $client->createServerRequest('POST', $this->url);
-        $request->withBody($client->createStream((string) json_encode($body)));
+        $request = $client->createServerRequest('POST', $this->url)
+            ->withHeader('Content-Type', 'application/json')
+            ->withBody($client->createStream((string) json_encode($body)));
 
         return $client->sendRequest($request);
     }
