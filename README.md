@@ -1,6 +1,6 @@
 # Buggregator client
 
-Buggregator client library for xhprof as middleware.
+Buggregator client library for xhprof as PSR-15 middleware.
 
 
 ## Install
@@ -11,5 +11,19 @@ composer require marekskopal/buggregator-client
 
 ## Usage
 
-TBD
+Use `XhprofMiddleware` class as PSR-15 middleware.
 
+```php
+
+use MarekSkopal\BuggregatorClient\Middleware;
+
+$xhprofMiddleware new XhprofMiddleware(
+    appName: 'MyApp',
+    url: (string) getenv('PROFILER_ENDPOINT'),
+));
+
+//e.g. phpleague/route
+
+$router->middleware($xhprofMiddleware);
+
+```
