@@ -39,6 +39,10 @@ class XhprofMiddleware implements MiddlewareInterface
 
     private function start(): void
     {
+        if (!function_exists('xhprof_enable')) {
+            return;
+        }
+
         $ignoredFunctions = [
             'xhprof_disable',
             'MarekSkopal\BuggregatorClient\Middleware\XhprofMiddleware::end',
@@ -53,6 +57,10 @@ class XhprofMiddleware implements MiddlewareInterface
 
     private function end(DateTimeImmutable $date): void
     {
+        if (!function_exists('xhprof_disable')) {
+            return;
+        }
+
         $data = xhprof_disable();
 
         $buggregatorClient = new BuggregatorClient($this->appName, $this->url, $date);

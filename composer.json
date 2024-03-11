@@ -1,7 +1,7 @@
 {
     "name": "marekskopal/buggregator-client",
     "type": "library",
-    "description": "Buggregator client library for xhprof as middleware",
+    "description": "Buggregator client library for xhprof as PSR-15 middleware",
     "license": "MIT",
     "authors": [
         {
@@ -13,7 +13,6 @@
         "php": ">=8.2",
         "psr/http-client": "^1.0",
         "psr/http-server-middleware": "^1.0",
-        "ext-xhprof": "*",
         "php-http/discovery": "^1.19"
     },
     "require-dev": {
