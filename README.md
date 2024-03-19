@@ -17,7 +17,7 @@ Use `XhprofMiddleware` class as PSR-15 middleware.
 
 use MarekSkopal\BuggregatorClient\Middleware;
 
-$xhprofMiddleware new XhprofMiddleware(
+$xhprofMiddleware = new XhprofMiddleware(
     appName: 'MyApp',
     url: (string) getenv('PROFILER_ENDPOINT'),
 ));
