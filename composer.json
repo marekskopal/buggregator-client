@@ -2,6 +2,10 @@
     "name": "marekskopal/buggregator-client",
     "type": "library",
     "description": "Buggregator client library for xhprof as PSR-15 middleware",
+    "keywords": [
+        "buggregator",
+        "xhprof"
+    ],
     "license": "MIT",
     "authors": [
         {
